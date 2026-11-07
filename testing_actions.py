@@ -1,11 +1,13 @@
 from datetime import datetime
 import os
 
-today = datetime.today()
+now = datetime.now()
+date = now.strftime("%Y-%m-%d-%X")
+
 dir = "action_created_files"
 
 if not os.path.exists(dir):
     os.mkdir(dir)
 
-if not os.path.exists(dir):
-    file = open(f"{dir}/{today}.txt", "x")
+if not os.path.exists(f"{dir}/{date}.txt"):
+    file = open(f"{dir}/{date}.txt", "x")
